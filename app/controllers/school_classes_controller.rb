@@ -12,6 +12,7 @@ class SchoolClassesController < ApplicationController
   end 
   
   def create 
+    binding.pry
     @school_class = SchoolClass.new(school_class_params) 
     @school_class.save
     redirect_to school_class_path(@school_path)
@@ -30,7 +31,6 @@ class SchoolClassesController < ApplicationController
   private
   
   def school_class_params
-    binding.pry
     params.require(:school_class).permit(:title, :room_number)
   end 
   
